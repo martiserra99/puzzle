@@ -9,7 +9,6 @@ export function generatePieces(rows, columns, numPieces) {
   for (let i = 0; i < numPieces; i++) {
     const positions = piecesPositions[i];
     const color = piecesColors[i];
-    console.log(color, piecesColors);
     const piece = new PieceModel(i, positions, color.background, color.border);
     pieces.push(piece);
   }
