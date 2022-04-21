@@ -68,7 +68,10 @@ export class RootView {
       const rotateButtonId = this.pieces.rotateButtonId + i;
       const rotateButton = piecesElement.find(rotateButtonId);
       rotateButton.listeners.add("mousedown", function () {
-        rotateButton.set("background", config.styles.button.hover.background);
+        rotateButton.set(
+          "background",
+          config.styles.button.mousedown.background
+        );
       });
       this.rootElement.listeners.add("mouseup", function () {
         rotateButton.set("background", config.styles.button.background);
@@ -79,7 +82,7 @@ export class RootView {
   _setupPlayButtonEffects() {
     const playButton = this.playButton.playButtonElement;
     playButton.listeners.add("mousedown", function () {
-      playButton.set("background", config.styles.button.hover.background);
+      playButton.set("background", config.styles.button.mousedown.background);
     });
     this.rootElement.listeners.add("mouseup", function () {
       playButton.set("background", config.styles.button.background);

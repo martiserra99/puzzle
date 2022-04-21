@@ -23,7 +23,7 @@ export const config = {
         size: 16,
         weight: 600,
       },
-      hover: { background: "#d2d4c8" },
+      mousedown: { background: "#d2d4c8" },
     },
   },
 };
