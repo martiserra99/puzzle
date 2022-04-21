@@ -88,19 +88,12 @@ function fillMatrix(matrix, value) {
     for (let x = 0; x < matrix[y].length; x++) matrix[y][x] = value;
 }
 
-function randomFromArray(array) {
-  return array[randomNumber(0, array.length - 1)];
-}
-
-function randomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 function getPiecesFromMatrix(matrix, numPieces) {
   const pieces = [];
   for (let i = 0; i < numPieces; i++) {
     const piece = getPieceFromMatrix(matrix, i + 1);
-    pieces.push(piece);
+    const rotated = rotatePiece(piece, randomNumber(0, 3));
+    pieces.push(rotated);
   }
   return pieces;
 }
@@ -121,4 +114,23 @@ function getPieceFromMatrix(matrix, value) {
     positions.push({ x: x - substract.x, y: y - substract.y });
   }
   return positions;
+}
+
+function rotatePiece(piece, count) {
+  let rotated = [...piece];
+  for (let i = 0; i < count; i++) {
+    const result = [];
+    const maxX = rotated.reduce((acc, pos) => (acc < pos.x ? pos.x : acc), 0);
+    for (const { x, y } of rotated) result.push({ x: y, y: maxX - x });
+    rotated = result;
+  }
+  return rotated;
+}
+
+function randomFromArray(array) {
+  return array[randomNumber(0, array.length - 1)];
+}
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
