@@ -141,8 +141,12 @@ export class PiecesView {
   }
 
   removeAll() {
-    for (let i = 0; i < config.numPieces; i++)
-      this.piecesElement.find(this.pieceAreaId + i).removeAll();
+    for (let i = 0; i < config.numPieces; i++) {
+      const pieceArea = this.piecesElement.find(this.pieceAreaId + i);
+      const piece = this.piecesElement.find(this.pieceId + i);
+      piece?.listeners.removeAll("blockMouseDown");
+      pieceArea.removeAll();
+    }
   }
 
   handlerRotateClick(handler) {
