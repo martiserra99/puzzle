@@ -15,9 +15,11 @@ export class View {
   }
 
   handlerRotatePiece(handler) {
-    this.root.pieces.handlerRotateClick(function (id) {
-      handler(id);
-    });
+    this.root.pieces.handlerRotateClick(
+      function (id) {
+        if (this.root.pieces.has(id)) handler(id);
+      }.bind(this)
+    );
   }
 
   handlerSelectFromPieces(handler) {

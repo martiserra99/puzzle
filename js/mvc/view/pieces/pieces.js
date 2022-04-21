@@ -136,6 +136,10 @@ export class PiecesView {
     });
   }
 
+  has(id) {
+    return this.piecesElement.find(this.pieceId + id) !== null;
+  }
+
   removeAll() {
     for (let i = 0; i < config.numPieces; i++)
       this.piecesElement.find(this.pieceAreaId + i).removeAll();
