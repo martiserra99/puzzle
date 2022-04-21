@@ -103,7 +103,7 @@ export class PiecesView {
   }
 
   _buildPiece(pieceModel) {
-    const piece = canvasUI.composite.new(this.pieceId, "piece");
+    const piece = canvasUI.composite.new(this.pieceId + pieceModel.id, "piece");
     piece.set("positions", pieceModel.positions);
     piece.set("block", {
       size: config.styles.block.size,
