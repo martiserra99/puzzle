@@ -3,9 +3,9 @@ export const config = {
   numPieces: 4,
   styles: {
     area: {
-      background: "#e0e2db",
-      border: { size: 5, color: "#d2d4c8" },
-      corner: { type: "round", size: 3 },
+      background: "#F5F5F5",
+      border: { size: 5, color: "#E0E0E0" },
+      corner: { type: "round", size: 10 },
     },
     block: {
       size: 25,
@@ -14,16 +14,16 @@ export const config = {
       gap: 0,
     },
     button: {
-      color: "#5f7470",
-      background: "#e0e2db",
-      border: { size: 5, color: "#d2d4c8" },
-      corner: { type: "round", size: 5 },
+      color: "#626262",
+      background: "#F5F5F5",
+      border: { size: 5, color: "#E0E0E0" },
+      corner: { type: "round", size: 10 },
       font: {
         family: "Raleway, sans-serif",
         size: 16,
         weight: 600,
       },
-      mousedown: { background: "#d2d4c8" },
+      mousedown: { background: "#E0E0E0" },
     },
   },
 };
