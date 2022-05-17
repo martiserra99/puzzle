@@ -1,5 +1,5 @@
+import canvasUI from "../../../canvasui-js.js";
 import { config } from "../../../config.js";
-import { canvasUI } from "../../../canvas-ui/canvas-ui.js";
 import { PiecesView } from "../pieces/pieces.js";
 import { PlayButtonView } from "../playButton/playButton.js";
 import { PuzzleView } from "../puzzle/puzzle.js";
@@ -36,12 +36,16 @@ export class RootView {
       right: "parent",
       bottom: "parent",
     });
+    puzzleElement.layoutParams.get("bias").vertical = 45;
   }
 
   _insertPieces() {
     const piecesElement = this.pieces.piecesElement;
     this.rootElement.insert(piecesElement);
-    piecesElement.layoutParams.get("attachTo").top = this.puzzle.puzzleElement;
+    piecesElement.layoutParams.get("attachTo").top = {
+      side: "bottom",
+      child: this.puzzle.id,
+    };
     piecesElement.layoutParams.get("attachTo").left = "parent";
     piecesElement.layoutParams.get("attachTo").right = "parent";
     piecesElement.layoutParams.get("margin").top = 50;
@@ -50,10 +54,18 @@ export class RootView {
   _insertPlayButton() {
     const playButtonElement = this.playButton.playButtonElement;
     this.rootElement.insert(playButtonElement);
-    playButtonElement.layoutParams.get("attachTo").top = "parent";
-    playButtonElement.layoutParams.get("attachTo").bottom = "parent";
-    playButtonElement.layoutParams.get("attachTo").right =
-      this.puzzle.puzzleElement;
+    playButtonElement.layoutParams.get("attachTo").top = {
+      side: "top",
+      child: this.puzzle.id,
+    };
+    playButtonElement.layoutParams.get("attachTo").bottom = {
+      side: "bottom",
+      child: this.puzzle.id,
+    };
+    playButtonElement.layoutParams.get("attachTo").right = {
+      side: "left",
+      child: this.puzzle.id,
+    };
     playButtonElement.layoutParams.get("margin").right = 30;
   }
 

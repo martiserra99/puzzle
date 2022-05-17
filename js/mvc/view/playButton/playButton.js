@@ -1,5 +1,5 @@
+import canvasUI from "../../../canvasui-js.js";
 import { config } from "../../../config.js";
-import { canvasUI } from "../../../canvas-ui/canvas-ui.js";
 
 export class PlayButtonView {
   id = "playButton";
