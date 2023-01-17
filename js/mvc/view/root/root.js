@@ -1,4 +1,4 @@
-import canvasUI from "../../../canvasui-js.js";
+import canvasUI from "../../../canvas-user-interface.js";
 import { config } from "../../../config.js";
 import { PiecesView } from "../pieces/pieces.js";
 import { PlayButtonView } from "../playButton/playButton.js";

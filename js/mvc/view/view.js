@@ -1,4 +1,4 @@
-import canvasUI from "../../canvasui-js.js";
+import canvasUI from "../../canvas-user-interface.js";
 import { RootView } from "./root/root.js";
 
 export class View {
