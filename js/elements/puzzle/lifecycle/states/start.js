@@ -1,4 +1,4 @@
-import canvasUI from "../../../../canvas-user-interface.js";
+import canvasUI from "../../../../canvas-user-interface/index.esm.js";
 
 export const setupStartLifecycleFunctions = function (puzzle) {
   puzzle.lifecycle.set("updateElement", function (puzzle, grid) {
